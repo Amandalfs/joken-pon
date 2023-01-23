@@ -47,13 +47,15 @@ function verifyWinner(){
     possibility3 = player=='tesoura' && machine=='papel';
     if(player===machine){
         panel.innerHTML += `<p class='result-round'>A partida empatou</p>`;
+        points += 1;
+        scoreboard.innerHTML = `Placar: <mark>${points}</mark>`;
     } else if(possibility1||possibility2||possibility3){
         panel.innerHTML += `<p class='result-round'>Voce venceu e ganho 3 pontos</p>`;
         points += 3;
         scoreboard.innerHTML = `Placar: <mark>${points}</mark>`;
     } else {
         panel.innerHTML += `<p class='result-round'>Voce perdeu e perdeu 1 ponto</p>`;
-        points -= 1;
+        points -= 3;
         scoreboard.innerHTML = `Placar: <mark>${points}</mark>`;
     }
 
